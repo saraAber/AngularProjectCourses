@@ -1,0 +1,56 @@
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.course-card {
+  width: 320px;
+}
+
+.add-btn-container {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+/* סגנונות טולטיפ */
+.add-btn-container::after {
+  content: 'הוסף קורס';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #077156;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1001;
+  border: none;
+}
+
+.add-btn-container:hover::after {
+  opacity: 1;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: #077156;
+}

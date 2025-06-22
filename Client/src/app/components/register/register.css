@@ -1,0 +1,29 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* רוחב מקסימלי לטופס */
+  margin: auto; /* מרכז את הטופס */
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.custom-button{
+  background-color: #077156 !important; /* צבע רקע */
+  color: white !important; /* צבע טקסט */
+  border-radius: 8px; /* קצוות מעוגלים */
+  padding: 12px 24px; /* רווחים פנימיים */
+  font-weight: bold; /* טקסט בולט */
+  transition: background-color 0.3s; /* אנימציה לשינוי צבע */
+}
+
+.custom-button:hover {
+  background-color: white !important; /* צבע רקע בעת ריחוף */
+  color: #065d4a !important; /* צבע טקסט בעת ריחוף */
+}
+
+.error-message {
+  color: red; /* צבע טקסט של הודעת שגיאה */
+  margin-top: 10px; /* רווח מעל הודעת השגיאה */
+}

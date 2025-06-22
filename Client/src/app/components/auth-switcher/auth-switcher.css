@@ -1,0 +1,64 @@
+
+
+.welcome-container {
+  max-width: 80%;
+  height: 80%;
+  margin: 48px auto;
+  padding: 32px 24px 24px 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px #0002;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background-image: url('/images/1.jpg'); 
+  background-size: cover;
+  background-position: center;
+  position: relative; 
+}
+
+.welcome-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); 
+  z-index: 1; 
+  border-radius: 16px;
+}
+
+.welcome-title {
+  color: #077156;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  position: relative; 
+  z-index: 2;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  position: relative;
+  z-index: 2; 
+}
+.custom-button {
+  background-color: #077156; /* צבע רקע */
+  color: white; /* צבע טקסט */
+  border-radius: 8px; /* קצוות מעוגלים */
+  padding: 12px 24px; /* רווחים פנימיים */
+  font-weight: bold; /* טקסט בולט */
+  transition: background-color 0.3s; /* אנימציה לשינוי צבע */
+}
+
+.custom-button:hover {
+  background-color: white; /* צבע רקע כהה יותר בעת ריחוף */
+  color:#065d4a ; /* צבע טקסט נשאר לבן */
+}
+
+
+

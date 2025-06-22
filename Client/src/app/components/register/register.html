@@ -1,0 +1,73 @@
+<!-- <form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label>שם:</label>
+    <input formControlName="name" type="text" />
+    <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      חובה להזין שם
+    </div>
+  </div>
+  <div>
+    <label>אימייל:</label>
+    <input formControlName="email" type="email" />
+    <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      יש להזין אימייל תקין
+    </div>
+  </div>
+  <div>
+    <label>סיסמה:</label>
+    <input formControlName="password" type="password" />
+    <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+      חובה להזין סיסמה (לפחות 6 תווים)
+    </div>
+  </div>
+  <div>
+    <label>סוג משתמש:</label>
+    <select formControlName="role">
+      <option value="student">סטודנט</option>
+      <option value="teacher">מורה</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="form.invalid">הרשמה</button>
+  <div *ngIf="error" style="color:red">{{ error }}</div>
+</form> -->
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="login-form">
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>שם</mat-label>
+    <input matInput formControlName="name" type="text" />
+    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      חובה להזין שם
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>אימייל</mat-label>
+    <input matInput formControlName="email" type="email" />
+    <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      יש להזין אימייל תקין
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>סיסמה</mat-label>
+    <input matInput formControlName="password" type="password" />
+    <mat-error *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+      חובה להזין סיסמה (לפחות 6 תווים)
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>סוג משתמש</mat-label>
+    <mat-select formControlName="role">
+      <mat-option value="student">סטודנט</mat-option>
+      <mat-option value="teacher">מורה</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button class="custom-button" type="submit" [disabled]="form.invalid">הרשמה</button>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+</form>
+
+<div class="auth-footer">
+  <p>כבר יש לך חשבון? <a routerLink="/login">התחבר כאן</a></p>
+  <p>© 2023 מערכת ניהול קורסים אונליין</p>

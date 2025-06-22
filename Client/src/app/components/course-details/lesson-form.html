@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label>שם שיעור:</label>
+    <input formControlName="title" type="text" />
+  </div>
+  <div>
+    <label>תוכן:</label>
+    <textarea formControlName="content"></textarea>
+  </div>
+  <button type="submit" [disabled]="form.invalid">{{ editMode ? 'עדכן' : 'הוסף' }}</button>
+  <button type="button" (click)="onCancel()">ביטול</button>
+</form>

@@ -1,0 +1,33 @@
+<h1>רשימת קורסים</h1>
+<div *ngIf="error" style="color:red">{{ error }}</div>
+<div class="courses-list">
+  <mat-card *ngFor="let course of courses" class="course-card">
+    <mat-card-title>
+      <a mat-button color="accent" [routerLink]="['/courses', course.id]"> {{ course.title }}
+      </a>
+
+    </mat-card-title>
+    <mat-card-content>
+      <div>{{ course.description }}</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <ng-container *ngIf="userRole === 'teacher'">
+        <button mat-icon-button color="primary" (click)="openForm(course)" matTooltip="ערוך">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCourse(course)" matTooltip="מחק">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </ng-container>
+      <ng-container *ngIf="userRole === 'student'">
+        <button mat-raised-button color="primary" *ngIf="!isEnrolled(course)" (click)="enroll(course)">הצטרף</button>
+        <button mat-raised-button color="warn" *ngIf="isEnrolled(course)" (click)="unenroll(course)">עזוב</button>
+      </ng-container>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div class="add-btn-container" style="z-index: 1000; position: fixed; bottom: 32px; left: 32px;">
+  <button *ngIf="userRole === 'teacher'" mat-fab color="primary" class="add-btn" (click)="openForm()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
